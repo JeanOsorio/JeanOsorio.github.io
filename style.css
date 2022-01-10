@@ -3,6 +3,14 @@
   padding: 0;
 }
 
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2em;
+  font-weight: 400;
+  text-align: center;
+  margin: 0 0 1em 0;
+}
+
 .wrapper {
   min-width: 100vw;
   height: 100vh;
@@ -13,4 +21,19 @@
 
 .container {
   font-family: "Poppins", sans-serif;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+  pointer-events: none;
+}
+
+.linkedin-link:hover > img {
+  color: red;
 }
