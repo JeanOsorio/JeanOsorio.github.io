@@ -1,3 +1,9 @@
+:root {
+  --jo-color-purple: rgb(68, 76, 247);
+  --jo-color-white: rgb(255, 255, 255);
+  --jo-color-transparent-01: rgba(0, 0, 0, 0.1);
+  --jo-color-transparent-004: rgba(0, 0, 0, 0.04);
+}
 * {
   margin: 0;
   padding: 0;
@@ -17,10 +23,40 @@ h1 {
   display: grid;
   justify-content: center;
   place-items: center;
+  /*
+   * the following patter was generated on https://www.magicpattern.design/tools/css-backgrounds
+  */
+  background-image: radial-gradient(
+      var(--jo-color-purple) 0.5px,
+      transparent 0.5px
+    ),
+    radial-gradient(var(--jo-color-purple) 0.5px, var(--jo-color-white) 0.5px);
+  background-size: 20px 20px;
+  background-position: 0px 0px, 10px 10px;
 }
 
 .container {
   font-family: "Poppins", sans-serif;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  -webkit-margin-start: 1rem;
+  margin-inline-start: 1rem;
+  -webkit-margin-end: 1rem;
+  margin-inline-end: 1rem;
+  padding: 2rem;
+  border-radius: 16px;
+  background: var(--jo-color-white);
+  box-shadow: 0 20px 25px -5px var(--jo-color-transparent-01),
+    0 10px 10px -5px var(--jo-color-transparent-004);
+  position: initial;
+  top: 16px;
+  z-index: 10;
+}
+
+.profile-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
 }
 
 .icons {
@@ -35,5 +71,5 @@ h1 {
 }
 
 .linkedin-link:hover > img {
-  color: red;
+  fill: red;
 }
