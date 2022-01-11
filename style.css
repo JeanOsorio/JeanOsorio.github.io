@@ -15,7 +15,15 @@ h1 {
   font-size: 1.2em;
   font-weight: 400;
   text-align: center;
-  margin: 0 0 1em 0;
+  margin: 0;
+}
+
+h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8em;
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
 }
 
 .wrapper {
