@@ -33,79 +33,117 @@
   </head>
   <body>
     <div class="wrapper">
-      <div class="container">
-        <img
-          class="profile-pic"
-          src="assets/images/jeanosorio.jpeg"
-          alt="Jean Osorio"
-        />
-        <h1>Jean Osorio</h1>
-        <h3>Software Engineer</h3>
-        <div class="icons">
-          <a
-            class="linkedin-link"
-            href="https://www.linkedin.com/in/jeanosorio/"
-            alt="Jean Osorio Linkedin profile"
-            target="_blank"
-          >
-            <object
-              type="image/svg+xml"
-              class="icon linkedin-icon"
-              data="/assets/icons/linkedin.svg"
+      <div id="background-container">
+        <div class="container">
+          <img
+            class="profile-pic"
+            src="assets/images/jeanosorio.jpeg"
+            alt="Jean Osorio"
+          />
+          <h1>Jean Osorio</h1>
+          <h3>Software Engineer</h3>
+          <div class="icons">
+            <a
+              class="linkedin-link"
+              href="https://www.linkedin.com/in/jeanosorio/"
+              alt="Jean Osorio Linkedin profile"
+              target="_blank"
             >
-              linkedin
-            </object>
-          </a>
-          <a
-            class="twitter-link"
-            href="https://twitter.com/jeanosorio/"
-            alt="Jean Osorio Twitter profile"
-            target="_blank"
-          >
-            <object
-              type="image/svg+xml"
-              class="icon twitter-icon"
-              data="/assets/icons/twitter.svg"
+              <object
+                type="image/svg+xml"
+                class="icon linkedin-icon"
+                data="/assets/icons/linkedin.svg"
+              >
+                linkedin
+              </object>
+            </a>
+            <a
+              class="twitter-link"
+              href="https://twitter.com/jeanosorio/"
+              alt="Jean Osorio Twitter profile"
+              target="_blank"
             >
-              twitter
-            </object>
-          </a>
-          <a
-            class="twitter-link"
-            href="https://github.com/JeanOsorio"
-            alt="Jean Osorio GitHub profile"
-            target="_blank"
-          >
-            <object
-              type="image/svg+xml"
-              class="icon github-icon"
-              data="/assets/icons/github.svg"
+              <object
+                type="image/svg+xml"
+                class="icon twitter-icon"
+                data="/assets/icons/twitter.svg"
+              >
+                twitter
+              </object>
+            </a>
+            <a
+              class="twitter-link"
+              href="https://github.com/JeanOsorio"
+              alt="Jean Osorio GitHub profile"
+              target="_blank"
             >
-              twitter
-            </object>
-          </a>
-        </div>
-        <div class="portfolio">
-          <a
-            class="portfolio-item"
-            href="https://gradis.art"
-            alt="Gradis NFT"
-            target="_blank"
-          ></a>
-          <a
-            class="portfolio-item"
-            href="https://1337fox.art"
-            alt="1337 Fox NFT"
-            target="_blank"
-          ></a>
-          <a
-            class="portfolio-item"
-            href="https://rutalaboral.com"
-            alt="Rutal Laboral"
-            target="_blank"
-          ></a>
+              <object
+                type="image/svg+xml"
+                class="icon github-icon"
+                data="/assets/icons/github.svg"
+              >
+                twitter
+              </object>
+            </a>
+          </div>
+          <div class="portfolio">
+            <a
+              class="portfolio-item"
+              href="https://gradis.art"
+              alt="Gradis NFT"
+              target="_blank"
+              data-project="gradis"
+            ></a>
+            <a
+              class="portfolio-item"
+              href="https://1337fox.art"
+              alt="1337 Fox NFT"
+              target="_blank"
+              data-project="1337fox"
+            ></a>
+            <a
+              class="portfolio-item"
+              href="https://rutalaboral.com"
+              alt="Rutal Laboral"
+              target="_blank"
+              data-project="rutalaboral"
+            ></a>
+          </div>
         </div>
       </div>
     </div>
+    <script>
+      const wrapper = document.getElementById("background-container");
+      const links = document.querySelectorAll(".portfolio-item");
+      links.forEach((link) => {
+        link.addEventListener("mouseover", (event) => {
+          let bgImage = null;
+          console.log(event.target.dataset.project);
+          switch (event.target.dataset.project) {
+            case "gradis":
+              bgImage =
+                "https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3538&q=80";
+              break;
+            case "1337fox":
+              bgImage =
+                "https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3538&q=80";
+              break;
+            case "rutalaboral":
+              bgImage =
+                "https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3538&q=80";
+              break;
+
+            default:
+              break;
+          }
+
+          wrapper.style.backgroundImage = `url(${bgImage})`;
+          wrapper.style.backgroundSize = "cover";
+        });
+        link.addEventListener("mouseout", (event) => {
+          wrapper.style.backgroundImage = "none";
+        });
+      });
+    </script>
   </body>
 </html>

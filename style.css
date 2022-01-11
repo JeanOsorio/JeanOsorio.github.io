@@ -44,6 +44,14 @@ h3 {
   background-position: 0px 0px, 10px 10px;
 }
 
+#background-container {
+  min-width: 100vw;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  place-items: center;
+}
+
 .container {
   font-family: "Poppins", sans-serif;
   margin-top: 2rem;
