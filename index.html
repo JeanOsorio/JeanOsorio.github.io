@@ -32,7 +32,30 @@
     </script>
   </head>
   <body>
-    <div class="infoContainer"></div>
+    <div class="infoContainer">
+      <div class="info gradisInfo">
+        <h1>Gradis NFT</h1>
+        <h3>FullStack Developer</h3>
+        <ul>
+          <li>Solidy</li>
+          <li>NodeJS</li>
+          <li>React</li>
+          <li>Web3js</li>
+          <li>Ethreum Network</li>
+        </ul>
+      </div>
+      <div class="info foxInfo">
+        <h1>1337 Fox NFT</h1>
+        <h3>Developer Advisor</h3>
+        <ul>
+          <li>Solidy</li>
+          <li>NodeJS</li>
+          <li>React</li>
+          <li>Web3js</li>
+          <li>Ethreum Network</li>
+        </ul>
+      </div>
+    </div>
     <div class="wrapper">
       <div id="background-container">
         <div class="container">
@@ -110,6 +133,8 @@
       const wrapper = document.getElementById('background-container');
       const links = document.querySelectorAll('.portfolio-item');
       const infoContainer = document.querySelector('.infoContainer');
+      const gradisInfo = document.querySelector('.gradisInfo');
+      const foxInfo = document.querySelector('.foxInfo');
       links.forEach((link) => {
         link.addEventListener('mouseover', (event) => {
           let bgImage = null;
@@ -117,10 +142,12 @@
             case 'gradis':
               bgImage = '/assets/images/gradis.png';
               infoContainer.style.display = 'block';
+              gradisInfo.style.display = 'block';
               break;
             case '1337fox':
               bgImage = '/assets/images/1337fox.png';
               infoContainer.style.display = 'block';
+              foxInfo.style.display = 'block';
               break;
             default:
               break;
@@ -130,8 +157,10 @@
           wrapper.style.backgroundSize = 'cover';
         });
         link.addEventListener('mouseout', (event) => {
-          wrapper.style.backgroundImage = 'none';
+          // wrapper.style.backgroundImage = 'none';
           infoContainer.style.display = 'none';
+          gradisInfo.style.display = 'none';
+          foxInfo.style.display = 'none';
         });
       });
     </script>

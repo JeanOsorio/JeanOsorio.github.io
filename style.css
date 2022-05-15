@@ -26,6 +26,12 @@ h3 {
   margin: 0 0 1em 0;
 }
 
+li {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9em;
+  font-weight: 100;
+}
+
 .wrapper {
   min-width: 100vw;
   height: 100vh;
@@ -143,6 +149,10 @@ h3 {
   background: var(--jo-color-white);
   box-shadow: 0 20px 25px -5px var(--jo-color-transparent-01), 0 10px 10px -5px var(--jo-color-transparent-004);
   display: none
+}
+
+.info {
+  display: none;
 }
 @keyframes pulse-ring {
   0% {
