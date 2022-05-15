@@ -26,9 +26,9 @@
       function gtag() {
         dataLayer.push(arguments);
       }
-      gtag("js", new Date());
+      gtag('js', new Date());
 
-      gtag("config", "G-G9F8186W9F");
+      gtag('config', 'G-G9F8186W9F');
     </script>
   </head>
   <body>
@@ -101,33 +101,26 @@
               target="_blank"
               data-project="1337fox"
             ></a>
-            <a
-              class="portfolio-item"
-              href="https://rutalaboral.com"
-              alt="Rutal Laboral"
-              target="_blank"
-              data-project="rutalaboral"
-            ></a>
           </div>
         </div>
       </div>
     </div>
     <script>
-      const wrapper = document.getElementById("background-container");
-      const links = document.querySelectorAll(".portfolio-item");
+      const wrapper = document.getElementById('background-container');
+      const links = document.querySelectorAll('.portfolio-item');
       links.forEach((link) => {
-        link.addEventListener("mouseover", (event) => {
+        link.addEventListener('mouseover', (event) => {
           let bgImage = null;
           console.log(event.target.dataset.project);
           switch (event.target.dataset.project) {
-            case "gradis":
-              bgImage = "/assets/images/gradis.png";
+            case 'gradis':
+              bgImage = '/assets/images/gradis.png';
               break;
-            case "1337fox":
-              bgImage = "/assets/images/1337fox.png";
+            case '1337fox':
+              bgImage = '/assets/images/1337fox.png';
               break;
-            case "rutalaboral":
-              bgImage = "/assets/images/test.jpg";
+            case 'rutalaboral':
+              bgImage = '/assets/images/test.jpg';
               break;
 
             default:
@@ -135,10 +128,10 @@
           }
 
           wrapper.style.backgroundImage = `url(${bgImage})`;
-          wrapper.style.backgroundSize = "cover";
+          wrapper.style.backgroundSize = 'cover';
         });
-        link.addEventListener("mouseout", (event) => {
-          wrapper.style.backgroundImage = "none";
+        link.addEventListener('mouseout', (event) => {
+          wrapper.style.backgroundImage = 'none';
         });
       });
     </script>
