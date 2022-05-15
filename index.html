@@ -32,6 +32,7 @@
     </script>
   </head>
   <body>
+    <div class="infoContainer"></div>
     <div class="wrapper">
       <div id="background-container">
         <div class="container">
@@ -108,21 +109,19 @@
     <script>
       const wrapper = document.getElementById('background-container');
       const links = document.querySelectorAll('.portfolio-item');
+      const infoContainer = document.querySelector('.infoContainer');
       links.forEach((link) => {
         link.addEventListener('mouseover', (event) => {
           let bgImage = null;
-          console.log(event.target.dataset.project);
           switch (event.target.dataset.project) {
             case 'gradis':
               bgImage = '/assets/images/gradis.png';
+              infoContainer.style.display = 'block';
               break;
             case '1337fox':
               bgImage = '/assets/images/1337fox.png';
+              infoContainer.style.display = 'block';
               break;
-            case 'rutalaboral':
-              bgImage = '/assets/images/test.jpg';
-              break;
-
             default:
               break;
           }
@@ -132,6 +131,7 @@
         });
         link.addEventListener('mouseout', (event) => {
           wrapper.style.backgroundImage = 'none';
+          infoContainer.style.display = 'none';
         });
       });
     </script>

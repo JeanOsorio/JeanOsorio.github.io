@@ -131,6 +131,19 @@ h3 {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
   animation: pulse-dot 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite;
 }
+
+.infoContainer {
+  width: 300px;
+  height: 200px;
+  position: absolute;
+  margin-top: 50px;
+  margin-left: calc(100vw - 375px);
+  padding: 2rem;
+  border-radius: 16px;
+  background: var(--jo-color-white);
+  box-shadow: 0 20px 25px -5px var(--jo-color-transparent-01), 0 10px 10px -5px var(--jo-color-transparent-004);
+  display: none
+}
 @keyframes pulse-ring {
   0% {
     transform: scale(0.33);
