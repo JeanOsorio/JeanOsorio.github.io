@@ -32,113 +32,119 @@
     </script>
   </head>
   <body>
-    <div class="infoContainer">
-      <div class="info gradisInfo">
-        <h1>Gradis NFT</h1>
-        <h3>FullStack Developer</h3>
-        <ul>
-          <li>Solidy</li>
-          <li>NodeJS</li>
-          <li>React</li>
-          <li>Web3js</li>
-          <li>Ethreum Network</li>
-        </ul>
-      </div>
-      <div class="info foxInfo">
-        <h1>1337 Fox NFT</h1>
-        <h3>Developer Advisor</h3>
-        <ul>
-          <li>Solidy</li>
-          <li>NodeJS</li>
-          <li>React</li>
-          <li>Web3js</li>
-          <li>Ethreum Network</li>
-        </ul>
-      </div>
-    </div>
     <div class="wrapper">
       <div id="background-container">
         <div class="container">
-          <img
-            class="profile-pic"
-            src="assets/images/jeanosorio.jpeg"
-            alt="Jean Osorio"
-          />
-          <h1>Jean Osorio</h1>
-          <h3>Software Engineer</h3>
-          <div class="icons">
-            <a
-              class="linkedin-link"
-              href="https://www.linkedin.com/in/jeanosorio/"
-              alt="Jean Osorio Linkedin profile"
-              target="_blank"
-            >
-              <object
-                type="image/svg+xml"
-                class="icon linkedin-icon"
-                data="/assets/icons/linkedin.svg"
+          <div class="mainContent">
+            <img
+              class="profile-pic"
+              src="assets/images/jeanosorio.jpeg"
+              alt="Jean Osorio"
+            />
+            <h1>Jean Osorio</h1>
+            <h3>Software Engineer</h3>
+            <div class="icons">
+              <a
+                class="linkedin-link"
+                href="https://www.linkedin.com/in/jeanosorio/"
+                alt="Jean Osorio Linkedin profile"
+                target="_blank"
               >
-                linkedin
-              </object>
-            </a>
-            <a
-              class="twitter-link"
-              href="https://twitter.com/jeanosorio/"
-              alt="Jean Osorio Twitter profile"
-              target="_blank"
-            >
-              <object
-                type="image/svg+xml"
-                class="icon twitter-icon"
-                data="/assets/icons/twitter.svg"
+                <object
+                  type="image/svg+xml"
+                  class="icon linkedin-icon"
+                  data="/assets/icons/linkedin.svg"
+                >
+                  linkedin
+                </object>
+              </a>
+              <a
+                class="twitter-link"
+                href="https://twitter.com/jeanosorio/"
+                alt="Jean Osorio Twitter profile"
+                target="_blank"
               >
-                twitter
-              </object>
-            </a>
-            <a
-              class="twitter-link"
-              href="https://github.com/JeanOsorio"
-              alt="Jean Osorio GitHub profile"
-              target="_blank"
-            >
-              <object
-                type="image/svg+xml"
-                class="icon github-icon"
-                data="/assets/icons/github.svg"
+                <object
+                  type="image/svg+xml"
+                  class="icon twitter-icon"
+                  data="/assets/icons/twitter.svg"
+                >
+                  twitter
+                </object>
+              </a>
+              <a
+                class="twitter-link"
+                href="https://github.com/JeanOsorio"
+                alt="Jean Osorio GitHub profile"
+                target="_blank"
               >
-                twitter
-              </object>
-            </a>
-            <a
-              class="twitter-link"
-              href="assets/pdf/ResumeEN2021.pdf"
-              alt="Jean Osorio CV"
-              target="_blank"
-            >
-              <object
-                type="image/svg+xml"
-                class="icon github-icon"
-                data="/assets/icons/download.svg"
+                <object
+                  type="image/svg+xml"
+                  class="icon github-icon"
+                  data="/assets/icons/github.svg"
+                >
+                  twitter
+                </object>
+              </a>
+              <a
+                class="twitter-link"
+                href="assets/pdf/ResumeEN2021.pdf"
+                alt="Jean Osorio CV"
+                target="_blank"
               >
-                twitter
-              </object>
-            </a>
+                <object
+                  type="image/svg+xml"
+                  class="icon github-icon"
+                  data="/assets/icons/download.svg"
+                >
+                  twitter
+                </object>
+              </a>
+            </div>
+            <div class="portfolio">
+              <div
+                class="portfolio-item"
+                alt="Gradis NFT"
+                data-project="gradis"
+              ></div>
+              <div
+                class="portfolio-item"
+                alt="1337 Fox NFT"
+                data-project="1337fox"
+              ></div>
+            </div>
           </div>
-          <div class="portfolio">
-            <a
-              class="portfolio-item"
-              href="https://gradis.art"
-              alt="Gradis NFT"
-              target="_blank"
-              data-project="gradis"
-            ></a>
-            <a
-              class="portfolio-item"
-              href="https://1337fox.art"
-              alt="1337 Fox NFT"
-              target="_blank"
-              data-project="1337fox"
-            ></a>
+          <div class="infoContainer">
+            <div class="goBack"></div>
+            <object
+              type="image/svg+xml"
+              class="icon back-icon"
+              data="/assets/icons/arrowLeft.svg"
+            ></object>
+            <div class="info gradisInfo">
+              <h1>Gradis NFT</h1>
+              <h3>FullStack Developer</h3>
+              <ul>
+                <li>Solidy</li>
+                <li>NodeJS</li>
+                <li>React</li>
+                <li>Web3js</li>
+                <li>Ethreum Network</li>
+                <li><a href="https://gradis.art" target="_blank">Web</a></li>
+              </ul>
+            </div>
+            <div class="info foxInfo">
+              <h1>1337 Fox NFT</h1>
+              <h3>Developer Advisor</h3>
+              <ul>
+                <li>Solidy</li>
+                <li>NodeJS</li>
+                <li>React</li>
+                <li>Web3js</li>
+                <li>Ethreum Network</li>
+                <li><a href="https://1337fox.art" target="_blank">Web</a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -146,21 +152,27 @@
     <script>
       const wrapper = document.getElementById('background-container');
       const links = document.querySelectorAll('.portfolio-item');
-      const infoContainer = document.querySelector('.infoContainer');
+      const infoContainer = document.querySelector('.container');
+      const projectContainer = document.querySelector('.infoContainer');
+      const mainContent = document.querySelector('.mainContent');
       const gradisInfo = document.querySelector('.gradisInfo');
       const foxInfo = document.querySelector('.foxInfo');
+      const goBack = document.querySelector('.goBack');
+      const backIcon = document.querySelector('.back-icon');
       links.forEach((link) => {
-        link.addEventListener('mouseover', (event) => {
+        link.addEventListener('click', (event) => {
           let bgImage = null;
+          infoContainer.classList.add('flipCard');
+          mainContent.style.display = 'none';
+          projectContainer.style.display = 'block';
+          backIcon.style.display = 'block';
           switch (event.target.dataset.project) {
             case 'gradis':
               bgImage = '/assets/images/gradis.png';
-              infoContainer.style.display = 'block';
               gradisInfo.style.display = 'block';
               break;
             case '1337fox':
               bgImage = '/assets/images/1337fox.png';
-              infoContainer.style.display = 'block';
               foxInfo.style.display = 'block';
               break;
             default:
@@ -170,11 +182,13 @@
           wrapper.style.backgroundImage = `url(${bgImage})`;
           wrapper.style.backgroundSize = 'cover';
         });
-        link.addEventListener('mouseout', (event) => {
-          // wrapper.style.backgroundImage = 'none';
-          infoContainer.style.display = 'none';
+        goBack.addEventListener('click', (event) => {
+          infoContainer.classList.remove('flipCard');
+          mainContent.style.display = 'block';
           gradisInfo.style.display = 'none';
           foxInfo.style.display = 'none';
+          wrapper.style.backgroundImage = 'none';
+          backIcon.style.display = 'none';
         });
       });
     </script>
