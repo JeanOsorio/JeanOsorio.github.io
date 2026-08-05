@@ -284,6 +284,15 @@ h1 {
   text-shadow: 5px 5px 0 var(--yellow), 9px 9px 0 var(--accent);
 }
 
+.hero-name {
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.hero-name span {
+  display: block;
+}
+
 :root[data-theme="dark"] h1 {
   text-shadow: 5px 5px 0 #2d3150, 9px 9px 0 #124e9e;
 }
@@ -889,7 +898,13 @@ h3 {
     min-height: auto;
   }
 
+  .hero-name {
+    font-size: clamp(4rem, 14vw, 7.6rem);
+  }
+
   .profile-panel {
+    justify-self: center;
+    width: min(100%, 420px);
     max-width: 420px;
   }
 
@@ -905,6 +920,10 @@ h3 {
 
   h1 {
     font-size: 4.3rem;
+  }
+
+  .hero-name {
+    font-size: clamp(3.6rem, 18vw, 4.3rem);
   }
 
   .button {
