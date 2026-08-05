@@ -1,5 +1,9 @@
 ---
-import { blogPosts } from "../../data/blog";
+import { getCollection } from "astro:content";
+
+const blogPosts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
 ---
 
 <section class="section blog-section" id="blog">
@@ -11,11 +15,11 @@ import { blogPosts } from "../../data/blog";
     {blogPosts.map((post) => (
       <article class="blog-card">
         <p class="card-tag">Article</p>
-        <h3>{post.title}</h3>
-        <p>{post.summary}</p>
-        <a class="blog-link" href={`/blog/${post.slug}/`}>Read article</a>
+        <h3>{post.data.title}</h3>
+        <p>{post.data.summary}</p>
+        <a class="blog-link" href={`/blog/${post.id}/`}>Read article</a>
         <ul class="chips">
-          {post.tags.map((tag) => <li>{tag}</li>)}
+          {post.data.tags.map((tag) => <li>{tag}</li>)}
         </ul>
       </article>
     ))}

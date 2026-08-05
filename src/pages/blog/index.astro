@@ -1,7 +1,7 @@
 ---
 import SiteHeader from "../../components/common/SiteHeader.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { blogPosts } from "../../data/blog";
+import { getCollection } from "astro:content";
 
 const blogNavLinks = [
   { href: "/#experience", label: "Experience" },
@@ -10,6 +10,10 @@ const blogNavLinks = [
   { href: "/#projects", label: "Projects" },
   { href: "/#stack", label: "Stack" }
 ];
+
+const blogPosts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
 ---
 
 <BaseLayout
@@ -33,11 +37,11 @@ const blogNavLinks = [
         {blogPosts.map((post) => (
           <article class="blog-card">
             <p class="card-tag">Article</p>
-            <h2>{post.title}</h2>
-            <p>{post.summary}</p>
-            <a class="blog-link" href={`/blog/${post.slug}/`}>Read article</a>
+            <h2>{post.data.title}</h2>
+            <p>{post.data.summary}</p>
+            <a class="blog-link" href={`/blog/${post.id}/`}>Read article</a>
             <ul class="chips">
-              {post.tags.map((tag) => <li>{tag}</li>)}
+              {post.data.tags.map((tag) => <li>{tag}</li>)}
             </ul>
           </article>
         ))}

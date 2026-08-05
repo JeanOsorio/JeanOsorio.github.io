@@ -1,16 +1,19 @@
 ---
 import SiteHeader from "../../components/common/SiteHeader.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { blogPosts } from "../../data/blog";
+import { getCollection, render } from "astro:content";
 
-export function getStaticPaths() {
+export async function getStaticPaths() {
+  const blogPosts = await getCollection("blog");
+
   return blogPosts.map((post) => ({
-    params: { slug: post.slug },
+    params: { slug: post.id },
     props: { post }
   }));
 }
 
 const { post } = Astro.props;
+const { Content } = await render(post);
 
 const articleNavLinks = [
   { href: "/#experience", label: "Experience" },
@@ -22,22 +25,31 @@ const articleNavLinks = [
 ---
 
 <BaseLayout
-  title={`${post.title} | Jean Osorio`}
-  description={post.summary}
-  canonical={Astro.site ? new URL(`/blog/${post.slug}/`, Astro.site).toString() : Astro.url.toString()}
+  title={`${post.data.title} | Jean Osorio`}
+  description={post.data.summary}
+  canonical={Astro.site ? new URL(`/blog/${post.id}/`, Astro.site).toString() : Astro.url.toString()}
 >
   <SiteHeader links={articleNavLinks} />
 
   <main>
     <article class="section article-page">
       <p class="section-label">Article</p>
-      <h1>{post.title}</h1>
-      <p class="lede">{post.summary}</p>
+      <h1>{post.data.title}</h1>
+      <p class="lede">{post.data.summary}</p>
+      {post.data.heroImage && (
+        <img
+          class="article-hero-image"
+          src={post.data.heroImage}
+          alt={post.data.heroImageAlt || ""}
+          loading="eager"
+          decoding="async"
+        />
+      )}
       <ul class="chips article-tags">
-        {post.tags.map((tag) => <li>{tag}</li>)}
+        {post.data.tags.map((tag) => <li>{tag}</li>)}
       </ul>
       <div class="article-body">
-        {post.content.map((paragraph) => <p>{paragraph}</p>)}
+        <Content />
       </div>
       <a class="button" href="/blog/">Back to blog</a>
     </article>
