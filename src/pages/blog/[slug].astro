@@ -19,7 +19,10 @@ const { post } = Astro.props;
 >
   <header class="site-header">
     <a class="brand" href="/" aria-label="Home">JO</a>
-    <nav class="nav" aria-label="Sections">
+    <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-controls="site-nav" aria-expanded="false">
+      <span aria-hidden="true"></span>
+    </button>
+    <nav id="site-nav" class="nav" aria-label="Sections">
       <a href="/#experience">Experience</a>
       <a href="/#ai">AI</a>
       <a href="/#leadership">Leadership</a>

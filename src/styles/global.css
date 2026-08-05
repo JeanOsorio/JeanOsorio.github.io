@@ -125,6 +125,56 @@ a {
   color: var(--accent);
 }
 
+.menu-toggle {
+  display: none;
+  position: relative;
+  width: 46px;
+  height: 42px;
+  border: 3px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel);
+  box-shadow: 4px 4px 0 var(--line);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.menu-toggle span,
+.menu-toggle::before,
+.menu-toggle::after {
+  position: absolute;
+  left: 11px;
+  width: 18px;
+  height: 3px;
+  border-radius: 999px;
+  background: currentColor;
+  content: "";
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.menu-toggle::before {
+  top: 12px;
+}
+
+.menu-toggle span {
+  top: 18px;
+}
+
+.menu-toggle::after {
+  top: 24px;
+}
+
+.menu-toggle[aria-expanded="true"]::before {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] span {
+  opacity: 0;
+}
+
+.menu-toggle[aria-expanded="true"]::after {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
 .theme-toggle {
   display: inline-grid;
   grid-template-columns: 1fr 1fr;
@@ -761,13 +811,38 @@ h3 {
 
 @media (max-width: 900px) {
   .site-header {
-    grid-template-columns: auto auto;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 14px;
+  }
+
+  .menu-toggle {
+    display: inline-block;
+    justify-self: end;
   }
 
   .nav {
     grid-column: 1 / -1;
+    flex-direction: column;
+    align-items: stretch;
     justify-content: flex-start;
     order: 3;
+    gap: 0;
+    width: 100%;
+    padding-top: 4px;
+  }
+
+  .js .nav {
+    display: none;
+  }
+
+  .site-header.is-menu-open .nav {
+    display: flex;
+  }
+
+  .nav a {
+    display: block;
+    padding: 12px 0;
+    border-top: 2px solid var(--tone-strong);
   }
 
   .theme-toggle {

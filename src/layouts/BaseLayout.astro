@@ -117,6 +117,7 @@ const jsonLd = {
     <link rel="manifest" href="/site.webmanifest" />
     <script is:inline>
       (() => {
+        document.documentElement.classList.add("js");
         const storedTheme = localStorage.getItem("theme");
         document.documentElement.dataset.theme = storedTheme || "light";
       })();
@@ -129,6 +130,9 @@ const jsonLd = {
       const themeButton = document.querySelector(".theme-toggle");
       const sun = document.querySelector(".theme-toggle__sun");
       const moon = document.querySelector(".theme-toggle__moon");
+      const menuButton = document.querySelector(".menu-toggle");
+      const header = document.querySelector(".site-header");
+      const nav = document.querySelector(".nav");
 
       function syncThemeButton() {
         const isDark = document.documentElement.dataset.theme === "dark";
@@ -144,6 +148,33 @@ const jsonLd = {
         document.documentElement.dataset.theme = nextTheme;
         localStorage.setItem("theme", nextTheme);
         syncThemeButton();
+      });
+
+      function setMenuOpen(isOpen) {
+        header?.classList.toggle("is-menu-open", isOpen);
+        menuButton?.setAttribute("aria-expanded", String(isOpen));
+      }
+
+      menuButton?.addEventListener("click", () => {
+        setMenuOpen(menuButton.getAttribute("aria-expanded") !== "true");
+      });
+
+      nav?.addEventListener("click", (event) => {
+        if (event.target instanceof HTMLAnchorElement) {
+          setMenuOpen(false);
+        }
+      });
+
+      window.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          setMenuOpen(false);
+        }
+      });
+
+      window.matchMedia("(min-width: 901px)").addEventListener("change", (event) => {
+        if (event.matches) {
+          setMenuOpen(false);
+        }
       });
 
       syncThemeButton();
