@@ -6,10 +6,10 @@ const roles = [
   {
     period: "2025 - Present",
     company: "CaixaBank Tech",
-    title: "Software Engineer",
+    title: "Squad Lead - Banksy onboarding platform",
     description:
-      "Software engineering in a product and platform environment, focused on technical quality, cross-functional collaboration, continuous delivery and pragmatic AI-assisted engineering workflows. I use AI tools to speed up repository exploration, implementation planning, documentation, refactoring and review preparation while keeping architecture and validation under human control.",
-    tags: ["Software engineering", "Frontend architecture", "AI-assisted delivery", "Code review"]
+      "Squad Lead for Banksy, the new digital onboarding platform for CaixaBank customers. I lead a small team of three people, combining delivery coordination, technical decision-making and hands-on implementation in a SPA built with internal custom components and a frontend architecture designed for complex banking flows. My work includes a dynamic KYC engine based on the questions required for each customer profile, Formik-based dynamic forms, high-coverage automated testing and a transition toward more agentic software development with skills and agents created by the Banksy team together with CaixaBank Tech's internal AI team.",
+    tags: ["Squad Lead", "Frontend architecture", "SPA", "KYC", "Formik", "Testing", "AI agents", "Banking"]
   },
   {
     period: "Aug 2022 - Jan 2025",
@@ -127,41 +127,72 @@ const roles = [
 
 const projects = [
   {
+    type: "Banking onboarding",
+    title: "CaixaBank Tech - Banksy",
+    problem:
+      "New customers need a guided onboarding flow that adapts to different profiles, regulatory questions and banking-specific validation needs without becoming hard to maintain.",
+    solution:
+      "Led a three-person squad building a SPA on top of internal custom components, with a dynamic KYC layer, Formik-powered form generation and a frontend architecture prepared for complex onboarding flows.",
+    impact:
+      "Improved maintainability, test confidence and delivery clarity while helping the team move toward agentic engineering practices with internal AI skills and agents.",
+    technologies: ["SPA", "Custom components", "Formik", "Dynamic KYC", "Automated testing", "AI-assisted workflows"]
+  },
+  {
+    type: "Proptech platform",
+    title: "Clikalia frontend architecture",
+    problem:
+      "Multiple business verticals needed to evolve without duplicating frontend foundations or fragmenting the product experience across countries.",
+    solution:
+      "Designed a modular architecture with Turborepo, Next.js and a custom TypeScript component library aligned with the design system.",
+    impact:
+      "Created stronger frontend standards for teams, improved reuse and supported migrations from JavaScript to TypeScript and from SASS to styled-components.",
+    technologies: ["Next.js", "TypeScript", "Turborepo", "Design system", "Module federation", "Jest", "Cypress"]
+  },
+  {
+    type: "Banking architecture",
+    title: "CaixaBank Silk architecture",
+    problem:
+      "Large banking applications needed a migration path toward reusable frontend foundations without forcing every team into a single monolith.",
+    solution:
+      "Worked on a micro-frontend architecture based on Stencil web components, including core modules for communication, authentication and internationalization.",
+    impact:
+      "Helped define reusable patterns that enabled teams to migrate applications incrementally while preserving consistency across banking products.",
+    technologies: ["Micro-frontends", "Stencil.js", "Web Components", "Architecture", "i18n", "Authentication"]
+  },
+  {
     type: "AI product delivery",
     title: "Centro Alba appointment platform",
-    description:
-      "Appointment-management application and public website work for Centro Alba, using AI-assisted workflows with Copilot CLI, Codex CLI and Google Gravity to move faster from planning to implementation.",
+    problem:
+      "A psychology center needs appointment and public web workflows that are clear for patients and efficient for internal management.",
+    solution:
+      "Built product increments with AI-assisted workflows using Copilot CLI, Codex CLI and Google Gravity-style exploration to move faster from planning to implementation.",
+    impact:
+      "Reduced iteration time and improved clarity around user flows, interface states and implementation tasks.",
+    technologies: ["AI-assisted delivery", "Product UX", "Frontend implementation", "Copilot CLI", "Codex CLI"],
     href: "https://centroalba.es"
   },
   {
     type: "Web3 platform",
     title: "Gradis",
-    description:
-      "Generative art NFT platform on Ethereum, with ERC721 contract integration and an asset pipeline.",
+    problem:
+      "A generative art collection needed minting, rarity, SVG handling and smart-contract infrastructure while preserving the visual logic of the artwork.",
+    solution:
+      "Owned the technical stack: Solidity contracts, ERC721/ERC1155 integration, React/Web3.js minting flows, Node.js thumbnails and SVG color manipulation based on token data.",
+    impact:
+      "Shipped the product foundation for minting, token visualization and rarity exploration.",
+    technologies: ["Solidity", "Ethereum", "ERC721", "ERC1155", "React", "Web3.js", "Node.js", "SVG"],
     href: "https://gradis.art"
-  },
-  {
-    type: "Generative NFT",
-    title: "1337 Fox",
-    description:
-      "Generative NFT collection with an on-chain whitelist strategy and technical decisions around security and gas cost.",
-    href: "https://1337fox.art"
-  },
-  {
-    type: "Open source",
-    title: "GitHub",
-    description:
-      "Public JavaScript and TypeScript repositories, including product experiments, tooling and frontend projects.",
-    href: "https://github.com/JeanOsorio"
   }
 ];
 
 const stack = [
-  ["Frontend architecture", "Next.js", "React", "TypeScript", "Tailwind CSS", "Styled-components", "Material UI", "Design systems", "Micro-frontends", "Module federation", "Stencil web components"],
-  ["AI delivery", "GitHub Copilot CLI", "Codex CLI", "Google Gravity", "AI-assisted refactoring", "Prompt engineering", "Spec-to-implementation workflows", "AI-assisted documentation", "AI code review preparation"],
-  ["Leadership", "Tech Lead", "Frontend Architect", "Team mentoring", "Architecture reviews", "Delivery planning", "Technical strategy", "Stakeholder alignment", "Remote team coordination", "Team rituals"],
-  ["Testing & quality", "Jest", "Cypress", "Cucumber", "React Testing Library", "E2E testing", "Unit testing", "Code review", "Migration strategy"],
-  ["Backend & tooling", "Node.js", "Turborepo", "Ruby on Rails", "PHP", "MySQL", "MongoDB", "Redis", "Shell", "CI/CD", "API integrations"],
+  ["Core & languages", "TypeScript", "JavaScript ES6+", "HTML5", "CSS3", "Node.js"],
+  ["Frameworks & UI", "React", "Next.js", "Angular", "Tailwind CSS", "Styled-components", "Material UI", "Formik"],
+  ["Frontend architecture", "Micro-frontends", "Module federation", "Turborepo", "Design systems", "Stencil web components", "Custom component libraries", "Migration strategy"],
+  ["Testing & quality", "Jest", "Cypress", "Cucumber", "React Testing Library", "E2E testing", "Unit testing", "High-coverage delivery", "Code review"],
+  ["AI-assisted engineering", "GitHub Copilot CLI", "Codex CLI", "Google Gravity", "Agentic workflows", "Team skills", "AI-assisted refactoring", "Prompt engineering", "Review preparation"],
+  ["Leadership", "Tech Lead", "Squad Lead", "Frontend Architect", "Team mentoring", "Architecture reviews", "Delivery planning", "Technical strategy", "Stakeholder alignment"],
+  ["Backend & tooling", "Ruby on Rails", "PHP", "MySQL", "MongoDB", "Redis", "Shell", "CI/CD", "API integrations"],
   ["Web3", "Solidity", "Web3.js", "Ethereum Network", "ERC721", "ERC1155", "Hardhat", "Truffle Framework", "Smart contracts"]
 ];
 
@@ -243,14 +274,14 @@ const credentials = [
   <main id="top">
     <section class="hero">
       <div class="hero-copy">
-        <p class="kicker">Issue 01 · Barcelona · Tech Lead</p>
+        <p class="kicker">Barcelona · Frontend Tech Lead · Architect</p>
         <h1>Jean Osorio</h1>
+        <p class="hero-title">Frontend Tech Lead & Architect</p>
         <p class="lede">
-          Tech Lead and Senior Frontend Engineer based in Barcelona. I have led
-          frontend teams and architecture across banking, proptech, insurance,
-          analytics, advertising platforms, Web3 and startup products. My work
-          combines team leadership, AI-assisted delivery, Next.js, React,
-          TypeScript, Tailwind CSS, micro-frontends, design systems and
+          I lead frontend teams and architecture across banking, proptech,
+          insurance, analytics, advertising platforms, Web3 and startup
+          products. My work combines team leadership, AI-assisted engineering,
+          Next.js, React, TypeScript, micro-frontends, design systems and
           pragmatic product execution.
         </p>
         <div class="actions" aria-label="Primary links">
@@ -371,15 +402,31 @@ const credentials = [
     <section class="section cards-section" id="projects">
       <div class="section-heading">
         <p class="section-label">Projects</p>
-        <h2>Products and public work</h2>
+        <h2>Featured work as architecture case studies.</h2>
       </div>
-      <div class="cards">
+      <div class="case-grid">
         {projects.map((project) => (
-          <article class="card">
+          <article class="case-card">
             <span class="card-tag">{project.type}</span>
             <h3>{project.title}</h3>
-            <p>{project.description}</p>
-            <a href={project.href} target="_blank" rel="noopener noreferrer">View project</a>
+            <dl class="case-study">
+              <div>
+                <dt>Problem</dt>
+                <dd>{project.problem}</dd>
+              </div>
+              <div>
+                <dt>Architectural solution</dt>
+                <dd>{project.solution}</dd>
+              </div>
+              <div>
+                <dt>Impact</dt>
+                <dd>{project.impact}</dd>
+              </div>
+            </dl>
+            <ul class="chips">
+              {project.technologies.map((item) => <li>{item}</li>)}
+            </ul>
+            {project.href && <a href={project.href} target="_blank" rel="noopener noreferrer">View project</a>}
           </article>
         ))}
       </div>
@@ -445,12 +492,12 @@ const credentials = [
 
     <section class="contact" id="contact">
       <div>
-        <p class="section-label">Contact</p>
-        <h2>Let’s talk about frontend, architecture or product engineering.</h2>
+        <p class="section-label">LinkedIn</p>
+        <h2>For professional conversations, reach me through LinkedIn.</h2>
       </div>
       <div class="contact-actions">
-        <a class="button primary" href="https://www.linkedin.com/in/jeanosorio" target="_blank" rel="noopener noreferrer">Contact on LinkedIn</a>
-        <button class="button" type="button" onclick="window.print()">Print</button>
+        <a class="button primary" href="https://www.linkedin.com/in/jeanosorio" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="button" href="https://github.com/JeanOsorio" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
     </section>
   </main>
