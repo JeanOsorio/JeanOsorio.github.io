@@ -1,0 +1,463 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { blogPosts } from "../data/blog";
+
+const roles = [
+  {
+    period: "2025 - Present",
+    company: "CaixaBank Tech",
+    title: "Software Engineer",
+    description:
+      "Software engineering in a product and platform environment, focused on technical quality, cross-functional collaboration, continuous delivery and pragmatic AI-assisted engineering workflows. I use AI tools to speed up repository exploration, implementation planning, documentation, refactoring and review preparation while keeping architecture and validation under human control.",
+    tags: ["Software engineering", "Frontend architecture", "AI-assisted delivery", "Code review"]
+  },
+  {
+    period: "Aug 2022 - Jan 2025",
+    company: "Clikalia",
+    title: "Frontend Tech Lead",
+    description:
+      "Designed and developed the new website architecture by modularizing Clikalia business verticals with Turborepo. Each module used Next.js and a custom TypeScript component library created from scratch to keep UI behavior consistent with the design system and adaptable to different countries. Led frontend decisions around testing with Jest, Cypress and Cucumber, internal micro-frontends with module federation, and migrations from JavaScript to TypeScript and from SASS to styled-components. This work combined architecture, mentoring, team coordination and technical standardization.",
+    tags: ["Tech Lead", "Next.js", "TypeScript", "Turborepo", "Module federation", "Design systems", "Jest", "Cypress", "AI-assisted planning"]
+  },
+  {
+    period: "May 2021 - Sep 2024",
+    company: "Gradis.art",
+    title: "Co-Founder",
+    description:
+      "Owned the technical stack for a Web3 generative art platform. Built algorithms to manipulate SVG colors based on token numbers, implemented a Node.js thumbnail service, integrated a React/Web3.js minting website with ERC721 and ERC1155 token specifications, developed Solidity smart contracts for Ethereum and created a rarity site for minted Gradis tokens.",
+    tags: ["Co-founder", "Solidity", "Node.js", "React", "Web3.js", "Ethereum", "ERC721", "ERC1155"]
+  },
+  {
+    period: "Aug 2020 - Jul 2023",
+    company: "Mímate Mamá",
+    title: "Co-Founder",
+    description:
+      "Co-founded a digital product initiative in Barcelona, combining product thinking, technical decision-making and hands-on execution. Applied startup leadership, prioritization, product discovery and iterative delivery practices.",
+    tags: ["Co-founder", "Startup leadership", "Product strategy", "Delivery"]
+  },
+  {
+    period: "Feb 2021 - Aug 2022",
+    company: "SingularCover",
+    title: "Frontend Tech Lead",
+    description:
+      "Worked as Frontend Team Lead, breaking a frontend monolith into a more maintainable architecture. Created a custom component library and an architecture and communication layer that allowed React to focus on UI while communicating with services such as Contentful and Phrase. Led decisions around React Context, shared UI contracts and team standards.",
+    tags: ["Tech Lead", "React", "Component library", "Architecture", "Contentful", "Phrase", "Team standards"]
+  },
+  {
+    period: "May 2019 - Feb 2021",
+    company: "atmira",
+    title: "Senior Application Architect - Tech Lead",
+    description:
+      "Worked as Frontend Team Lead for the new Online Banking of AndBank with a team of five developers, building a React, Redux Saga, TypeScript, React Testing Library and Material-UI frontend. Also led the frontend of Sirec, a multilingual debt recovery platform owned by atmira, coordinating a team of twelve developers and reengineering the frontend using Angular 9 micro-frontends. Participated in CaixaBank's Silk team to define a new frontend architecture based on micro-frontends and Stencil web components, designing core modules for communication, authentication and internationalization so teams could migrate existing CaixaBank applications.",
+    tags: ["Tech Lead", "Application architecture", "React", "Redux Saga", "TypeScript", "Angular", "Micro-frontends", "Stencil", "Banking", "12-person team"]
+  },
+  {
+    period: "May 2018 - May 2019",
+    company: "atmira",
+    title: "Frontend Architect",
+    description:
+      "Helped develop new frontend architecture for CaixaBank and BPI Bank. Focused on architectural foundations, reusable frontend patterns, migration paths and technical guidance for teams working on banking products.",
+    tags: ["Frontend Architect", "CaixaBank", "BPI Bank", "Architecture", "Reusable patterns"]
+  },
+  {
+    period: "Aug 2019 - May 2020",
+    company: "Local Productos App",
+    title: "Co-Founder",
+    description:
+      "Co-founded a local product discovery mobile initiative in Barcelona. Worked on product direction, app concept, delivery planning and technical execution for a React Native-style product experience.",
+    tags: ["Co-founder", "Mobile app", "Product", "React Native", "Startup"]
+  },
+  {
+    period: "Feb 2017 - Mar 2018",
+    company: "UserZoom",
+    title: "Frontend Developer",
+    description:
+      "Worked on the new UserZoom analytics application from scratch with a four-person team. Built the analytics UI using the React and Redux ecosystem and developed a Tableau Web Data Connector so users could handle research data beyond the default analytics interface.",
+    tags: ["React", "Redux", "Analytics", "Tableau Web Data Connector", "Team collaboration"]
+  },
+  {
+    period: "Jul 2015 - Jan 2017",
+    company: "ADman Media",
+    title: "Main Admin Developer",
+    description:
+      "Built three single-page applications for campaign metrics used by clients and publishers, using React, Redux and ES6 promises to consume multiple ADman APIs. Also worked on the Ruby on Rails administration platform with MySQL, integrating Asana, Pipedrive and Slack to automate campaign administration, task creation and notification workflows.",
+    tags: ["React", "Redux", "ES6", "Ruby on Rails", "MySQL", "Asana API", "Pipedrive API", "Slack bots", "Automation"]
+  },
+  {
+    period: "Jan 2014 - Jul 2015",
+    company: "Blabloo, languages & friends",
+    title: "Software Developer",
+    description:
+      "Worked as PHP and Ruby on Rails developer on an online language-learning product, using Linux, Redis, MongoDB and jQuery. Contributed to product features, backend integration and frontend interactions.",
+    tags: ["Ruby on Rails", "PHP", "Linux", "Redis", "MongoDB", "jQuery"]
+  },
+  {
+    period: "Jun 2011 - Apr 2015",
+    company: "HexaSystems Inc",
+    title: "Development Specialist",
+    description:
+      "Worked across iOS development, Microsoft Dexterity specialization and support for open-source platforms such as Joomla and WordPress. Combined enterprise software knowledge with web platform delivery.",
+    tags: ["iOS", "MS Dexterity", "Joomla", "WordPress", "Enterprise software"]
+  },
+  {
+    period: "Jan 2012 - Aug 2014",
+    company: "Hybrid Tech, Inc",
+    title: "Software Developer",
+    description:
+      "Delivered web development, website traffic work, UI improvements, social media management and advertising technology. Built web software with Ruby on Rails and PHP using open-source CMS platforms such as WordPress and OpenCart.",
+    tags: ["Ruby on Rails", "PHP", "WordPress", "OpenCart", "UI", "Advertising"]
+  },
+  {
+    period: "Sep 2008 - May 2011",
+    company: "Advantel Consultores",
+    title: "Collaboration Solutions Developer",
+    description:
+      "Assigned to DESCA for customization and support of ERP Microsoft Dynamics GP. Developed Visual Studio C# web tools for Dynamics GP generated documents, access control systems for DESCA offices, the Teaching Module for Fundación Bigott in Caracas and communication interfaces for payroll applications.",
+    tags: ["Microsoft Dynamics GP", "C#", "ERP", "Access control", "Payroll integrations"]
+  },
+  {
+    period: "Aug 2005 - Sep 2008",
+    company: "SINCA Soluciones Integrales de Negocio",
+    title: "Junior Developer",
+    description:
+      "Worked as MS Dexterity developer for ERP Microsoft Dynamics GP, building and customizing tax, human resources, teaching and commission calculation modules. Modified reports in MS Report Writer for SINCA clients.",
+    tags: ["MS Dexterity", "Microsoft Dynamics GP", "ERP", "Reports", "Business software"]
+  },
+];
+
+const projects = [
+  {
+    type: "AI product delivery",
+    title: "Centro Alba appointment platform",
+    description:
+      "Appointment-management application and public website work for Centro Alba, using AI-assisted workflows with Copilot CLI, Codex CLI and Google Gravity to move faster from planning to implementation.",
+    href: "https://centroalba.es"
+  },
+  {
+    type: "Web3 platform",
+    title: "Gradis",
+    description:
+      "Generative art NFT platform on Ethereum, with ERC721 contract integration and an asset pipeline.",
+    href: "https://gradis.art"
+  },
+  {
+    type: "Generative NFT",
+    title: "1337 Fox",
+    description:
+      "Generative NFT collection with an on-chain whitelist strategy and technical decisions around security and gas cost.",
+    href: "https://1337fox.art"
+  },
+  {
+    type: "Open source",
+    title: "GitHub",
+    description:
+      "Public JavaScript and TypeScript repositories, including product experiments, tooling and frontend projects.",
+    href: "https://github.com/JeanOsorio"
+  }
+];
+
+const stack = [
+  ["Frontend architecture", "Next.js", "React", "TypeScript", "Tailwind CSS", "Styled-components", "Material UI", "Design systems", "Micro-frontends", "Module federation", "Stencil web components"],
+  ["AI delivery", "GitHub Copilot CLI", "Codex CLI", "Google Gravity", "AI-assisted refactoring", "Prompt engineering", "Spec-to-implementation workflows", "AI-assisted documentation", "AI code review preparation"],
+  ["Leadership", "Tech Lead", "Frontend Architect", "Team mentoring", "Architecture reviews", "Delivery planning", "Technical strategy", "Stakeholder alignment", "Remote team coordination", "Team rituals"],
+  ["Testing & quality", "Jest", "Cypress", "Cucumber", "React Testing Library", "E2E testing", "Unit testing", "Code review", "Migration strategy"],
+  ["Backend & tooling", "Node.js", "Turborepo", "Ruby on Rails", "PHP", "MySQL", "MongoDB", "Redis", "Shell", "CI/CD", "API integrations"],
+  ["Web3", "Solidity", "Web3.js", "Ethereum Network", "ERC721", "ERC1155", "Hardhat", "Truffle Framework", "Smart contracts"]
+];
+
+const aiHighlights = [
+  {
+    title: "Centro Alba appointment management",
+    description:
+      "AI-supported product work for appointment flows, internal management screens and public web presence. The focus is practical: clarify the domain, generate implementation paths, review edge cases and ship usable increments."
+  },
+  {
+    title: "CLI-first AI workflows",
+    description:
+      "Daily use of tools such as GitHub Copilot CLI and Codex CLI to accelerate repository exploration, code generation, refactors, debugging, documentation and repeatable engineering tasks."
+  },
+  {
+    title: "Google Gravity experimentation",
+    description:
+      "Use of Google Gravity-style AI workflows for ideation, interface exploration and fast validation of product direction before committing engineering time."
+  },
+  {
+    title: "AI with engineering discipline",
+    description:
+      "AI output is treated as a draft, not as authority: every change still goes through architecture judgment, local validation, code review, maintainability checks and product fit."
+  }
+];
+
+const leadershipItems = [
+  "Leading frontend architecture decisions across product teams from atmira onward.",
+  "Mentoring engineers through pairing, review feedback, technical proposals and practical ownership.",
+  "Creating shared frontend standards so teams can move independently without fragmenting the product.",
+  "Designing component libraries, design-system foundations and UI contracts that reduce repeated work.",
+  "Coordinating remote and cross-functional teams with clear communication, delivery rituals and explicit decision records.",
+  "Protecting team focus by turning vague product needs into scoped, testable and shippable technical slices.",
+  "Balancing business deadlines with long-term maintainability: migration paths, technical debt triage and incremental modernization.",
+  "Driving architecture reviews around Next.js, React, TypeScript, micro-frontends, module federation, Turborepo and design-system strategy.",
+  "Helping teams adopt AI-assisted delivery while preserving code quality, accountability and security judgment.",
+  "Translating technical risk for product, design and business stakeholders so decisions are visible and reversible."
+];
+
+const education = [
+  {
+    title: "Universidad 'Alejandro de Humboldt'",
+    description: "Computer Science Engineer · 2001 - 2007"
+  },
+  {
+    title: "Instituto Universitario Jesús Obrero",
+    description: "Computer Science Superior Technician · 1998 - 2000"
+  }
+];
+
+const credentials = [
+  "70-480 Programming in HTML5 with JavaScript and CSS3",
+  "70-431 TS: Microsoft SQL Server 2005 - Implementation and Maintenance",
+  "MB3-527 Microsoft Dynamics GP 10.0 Installation & Configuration",
+  "Spanish - Native or bilingual",
+  "English - Professional working"
+];
+
+---
+
+<BaseLayout>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Home">JO</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#experience">Experience</a>
+      <a href="#ai">AI</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#projects">Projects</a>
+      <a href="#blog">Blog</a>
+      <a href="#stack">Stack</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+      <span class="theme-toggle__sun" aria-hidden="true">☀</span>
+      <span class="theme-toggle__moon" aria-hidden="true">☾</span>
+    </button>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="kicker">Issue 01 · Barcelona · Tech Lead</p>
+        <h1>Jean Osorio</h1>
+        <p class="lede">
+          Tech Lead and Senior Frontend Engineer based in Barcelona. I have led
+          frontend teams and architecture across banking, proptech, insurance,
+          analytics, advertising platforms, Web3 and startup products. My work
+          combines team leadership, AI-assisted delivery, Next.js, React,
+          TypeScript, Tailwind CSS, micro-frontends, design systems and
+          pragmatic product execution.
+        </p>
+        <div class="actions" aria-label="Primary links">
+          <a class="button primary" href="https://www.linkedin.com/in/jeanosorio" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="button" href="https://github.com/JeanOsorio" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </div>
+
+      <aside class="profile-panel" aria-label="Profile summary">
+        <p class="panel-stamp">Frontend manga file</p>
+        <img
+          src="https://github.com/JeanOsorio.png"
+          alt="Jean Osorio"
+          width="180"
+          height="180"
+          loading="eager"
+          decoding="async"
+        />
+        <dl class="facts">
+          <div>
+            <dt>Base</dt>
+            <dd>Barcelona, Spain</dd>
+          </div>
+          <div>
+            <dt>Focus</dt>
+            <dd>Tech Lead · Frontend architecture · Team leadership</dd>
+          </div>
+          <div>
+            <dt>Also</dt>
+            <dd>AI workflows · Next.js · Tailwind · Team leadership</dd>
+          </div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="section split" id="profile">
+      <div>
+        <p class="section-label">Profile</p>
+        <h2>Practical builder with architecture judgment.</h2>
+      </div>
+      <div class="body-copy">
+        <p>
+          I am a builder who has spent the last decade-plus taking frontend
+          work beyond implementation: defining architecture, leading teams,
+          mentoring engineers, breaking monoliths, creating component
+          libraries, planning migrations and making product delivery more
+          predictable.
+        </p>
+        <p>
+          I also use AI as a practical engineering layer: GitHub Copilot CLI,
+          Codex CLI, Google Gravity-style workflows, prompt-driven exploration,
+          AI-assisted refactoring, documentation drafts, implementation
+          planning and review preparation. The value is speed with judgment:
+          AI helps produce drafts and options, while architecture, quality and
+          team decisions remain intentional.
+        </p>
+      </div>
+    </section>
+
+    <section class="section ai-section" id="ai">
+      <div class="section-heading">
+        <p class="section-label">AI delivery</p>
+        <h2>AI as a practical layer in product engineering.</h2>
+      </div>
+      <div class="feature-grid">
+        {aiHighlights.map((item) => (
+          <article class="feature-card">
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section split leadership-section" id="leadership">
+      <div>
+        <p class="section-label">Leadership</p>
+        <h2>More than ten years guiding teams, architecture and delivery.</h2>
+      </div>
+      <div>
+        <p class="leadership-intro">
+          Since atmira, and later through SingularCover and Clikalia, my role
+          has consistently included tech lead responsibilities: shaping
+          technical direction, helping teams grow, protecting delivery focus,
+          coordinating developers and translating complexity into clear
+          decisions.
+        </p>
+        <ul class="leadership-list">
+          {leadershipItems.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="section-heading">
+        <p class="section-label">Experience</p>
+        <h2>Complete professional experience</h2>
+      </div>
+
+      <div class="timeline">
+        {roles.map((role) => (
+          <article class="role">
+            <div class="role-meta">
+              <span>{role.period}</span>
+              <strong>{role.company}</strong>
+            </div>
+            <div>
+              <h3>{role.title}</h3>
+              <p>{role.description}</p>
+              <ul class="chips">
+                {role.tags.map((tag) => <li>{tag}</li>)}
+              </ul>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section cards-section" id="projects">
+      <div class="section-heading">
+        <p class="section-label">Projects</p>
+        <h2>Products and public work</h2>
+      </div>
+      <div class="cards">
+        {projects.map((project) => (
+          <article class="card">
+            <span class="card-tag">{project.type}</span>
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
+            <a href={project.href} target="_blank" rel="noopener noreferrer">View project</a>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section blog-section" id="blog">
+      <div class="section-heading">
+        <p class="section-label">Blog</p>
+        <h2>Writing queue: AI, frontend architecture and team leadership.</h2>
+      </div>
+      <div class="blog-list">
+        {blogPosts.map((post) => (
+          <article class="blog-card">
+            <p class="card-tag">Article</p>
+            <h3>{post.title}</h3>
+            <p>{post.summary}</p>
+            <a class="blog-link" href={`/blog/${post.slug}/`}>Read article</a>
+            <ul class="chips">
+              {post.tags.map((tag) => <li>{tag}</li>)}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section stack-section" id="stack" aria-labelledby="stack-title">
+      <div class="section-heading">
+        <p class="section-label">Stack</p>
+        <h2 id="stack-title">AI, Next.js, TypeScript, leadership and Web3 technologies</h2>
+      </div>
+      <div class="stack-grid">
+        {stack.map(([group, ...items]) => (
+          <div>
+            <h3>{group}</h3>
+            <ul>
+              {items.map((item) => <li>{item}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="section split education-section">
+      <div>
+        <p class="section-label">Education</p>
+        <h2>Academic background and continuous learning.</h2>
+      </div>
+      <div class="education-list">
+        {education.map((item) => (
+          <article>
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
+          </article>
+        ))}
+        <article>
+          <h3>Certifications, languages and professional background</h3>
+          <ul class="plain-list">
+            {credentials.map((item) => <li>{item}</li>)}
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div>
+        <p class="section-label">Contact</p>
+        <h2>Let’s talk about frontend, architecture or product engineering.</h2>
+      </div>
+      <div class="contact-actions">
+        <a class="button primary" href="https://www.linkedin.com/in/jeanosorio" target="_blank" rel="noopener noreferrer">Contact on LinkedIn</a>
+        <button class="button" type="button" onclick="window.print()">Print</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Jean Osorio · Software Engineer · Barcelona</p>
+  </footer>
+
+</BaseLayout>

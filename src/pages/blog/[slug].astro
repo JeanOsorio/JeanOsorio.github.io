@@ -1,0 +1,49 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { blogPosts } from "../../data/blog";
+
+export function getStaticPaths() {
+  return blogPosts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post }
+  }));
+}
+
+const { post } = Astro.props;
+---
+
+<BaseLayout
+  title={`${post.title} | Jean Osorio`}
+  description={post.summary}
+  canonical={Astro.site ? new URL(`/blog/${post.slug}/`, Astro.site).toString() : Astro.url.toString()}
+>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Home">JO</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="/#experience">Experience</a>
+      <a href="/#ai">AI</a>
+      <a href="/#leadership">Leadership</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+      <span class="theme-toggle__sun" aria-hidden="true">☀</span>
+      <span class="theme-toggle__moon" aria-hidden="true">☾</span>
+    </button>
+  </header>
+
+  <main>
+    <article class="section article-page">
+      <p class="section-label">Article</p>
+      <h1>{post.title}</h1>
+      <p class="lede">{post.summary}</p>
+      <ul class="chips article-tags">
+        {post.tags.map((tag) => <li>{tag}</li>)}
+      </ul>
+      <div class="article-body">
+        {post.content.map((paragraph) => <p>{paragraph}</p>)}
+      </div>
+      <a class="button" href="/blog/">Back to blog</a>
+    </article>
+  </main>
+</BaseLayout>

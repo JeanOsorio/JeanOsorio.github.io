@@ -1,0 +1,152 @@
+---
+import "../styles/global.css";
+
+const {
+  title = "Jean Osorio | Tech Lead & Senior Frontend Engineer | AI, Next.js & TypeScript",
+  description = "Jean Osorio is a Barcelona-based Tech Lead and Senior Frontend Engineer focused on AI-assisted delivery, frontend architecture, Next.js, React, TypeScript, Tailwind CSS, design systems and Web3 products.",
+  canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : Astro.url.toString()
+} = Astro.props;
+
+const image = "https://github.com/JeanOsorio.png";
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://jeanosorio.dev/#person",
+      name: "Jean Osorio",
+      url: "https://jeanosorio.dev/",
+      image,
+      jobTitle: "Tech Lead and Senior Frontend Engineer",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Barcelona",
+        addressCountry: "ES"
+      },
+      knowsAbout: [
+        "AI-assisted software delivery",
+        "GitHub Copilot CLI",
+        "Codex CLI",
+        "Google Gravity",
+        "Frontend Architecture",
+        "Technical Leadership",
+        "Engineering Management",
+        "Team Mentoring",
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "JavaScript",
+        "Node.js",
+        "Design Systems",
+        "Micro-frontends",
+        "Web3",
+        "Solidity",
+        "Ethereum"
+      ],
+      alumniOf: [
+        {
+          "@type": "CollegeOrUniversity",
+          name: "Universidad Alejandro de Humboldt"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          name: "Instituto Universitario Jesus Obrero"
+        }
+      ],
+      worksFor: {
+        "@type": "Organization",
+        name: "CaixaBank Tech"
+      },
+      sameAs: [
+        "https://github.com/JeanOsorio",
+        "https://www.linkedin.com/in/jeanosorio"
+      ]
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://jeanosorio.dev/#profile-page",
+      url: "https://jeanosorio.dev/",
+      name: "Jean Osorio - Tech Lead and Senior Frontend Engineer",
+      description,
+      mainEntity: {
+        "@id": "https://jeanosorio.dev/#person"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://jeanosorio.dev/#website",
+      url: "https://jeanosorio.dev/",
+      name: "Jean Osorio",
+      publisher: {
+        "@id": "https://jeanosorio.dev/#person"
+      },
+      inLanguage: "en"
+    }
+  ]
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Jean Osorio" />
+    <meta name="theme-color" content="#f8f3e7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#101116" media="(prefers-color-scheme: dark)" />
+    <meta
+      name="keywords"
+      content="Jean Osorio, Tech Lead Barcelona, Software Engineer Barcelona, Frontend Engineer, Frontend Architect, Engineering Manager, AI software delivery, Copilot CLI, Codex CLI, Google Gravity, Next.js, Tailwind CSS, React, TypeScript, Node.js, Web3, Solidity, Ethereum"
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={image} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+    <link rel="canonical" href={canonical} />
+    <link rel="me" href="https://github.com/JeanOsorio" />
+    <link rel="me" href="https://www.linkedin.com/in/jeanosorio" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <script is:inline>
+      (() => {
+        const storedTheme = localStorage.getItem("theme");
+        document.documentElement.dataset.theme = storedTheme || "light";
+      })();
+    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body>
+    <slot />
+    <script is:inline>
+      const themeButton = document.querySelector(".theme-toggle");
+      const sun = document.querySelector(".theme-toggle__sun");
+      const moon = document.querySelector(".theme-toggle__moon");
+
+      function syncThemeButton() {
+        const isDark = document.documentElement.dataset.theme === "dark";
+        themeButton?.setAttribute("aria-pressed", String(isDark));
+        if (sun && moon) {
+          sun.style.opacity = isDark ? "0.42" : "1";
+          moon.style.opacity = isDark ? "1" : "0.42";
+        }
+      }
+
+      themeButton?.addEventListener("click", () => {
+        const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+        document.documentElement.dataset.theme = nextTheme;
+        localStorage.setItem("theme", nextTheme);
+        syncThemeButton();
+      });
+
+      syncThemeButton();
+    </script>
+  </body>
+</html>

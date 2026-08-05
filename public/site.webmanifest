@@ -1,0 +1,16 @@
+{
+  "name": "Jean Osorio",
+  "short_name": "Jean Osorio",
+  "description": "Tech Lead and Senior Frontend Engineer in Barcelona focused on AI-assisted delivery, Next.js, React, TypeScript, Tailwind CSS, Node.js and Web3.",
+  "start_url": "/",
+  "display": "minimal-ui",
+  "background_color": "#fbfaf6",
+  "theme_color": "#0c7c59",
+  "icons": [
+    {
+      "src": "https://github.com/JeanOsorio.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
