@@ -1,0 +1,20 @@
+---
+const {
+  brandHref = "/",
+  links = []
+} = Astro.props;
+---
+
+<header class="site-header">
+  <a class="brand" href={brandHref} aria-label="Home">JO</a>
+  <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-controls="site-nav" aria-expanded="false">
+    <span aria-hidden="true"></span>
+  </button>
+  <nav id="site-nav" class="nav" aria-label="Sections">
+    {links.map((link) => <a href={link.href}>{link.label}</a>)}
+  </nav>
+  <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+    <span class="theme-toggle__sun" aria-hidden="true">☀</span>
+    <span class="theme-toggle__moon" aria-hidden="true">☾</span>
+  </button>
+</header>

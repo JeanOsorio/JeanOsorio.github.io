@@ -1,0 +1,24 @@
+---
+import { credentials, education } from "../../data/home";
+---
+
+<section class="section split education-section">
+  <div>
+    <p class="section-label">Education</p>
+    <h2>Academic background and continuous learning.</h2>
+  </div>
+  <div class="education-list">
+    {education.map((item) => (
+      <article>
+        <h3>{item.title}</h3>
+        <p>{item.description}</p>
+      </article>
+    ))}
+    <article>
+      <h3>Certifications, languages and professional background</h3>
+      <ul class="plain-list">
+        {credentials.map((item) => <li>{item}</li>)}
+      </ul>
+    </article>
+  </div>
+</section>

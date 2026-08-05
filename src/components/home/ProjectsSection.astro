@@ -1,0 +1,36 @@
+---
+import { projects } from "../../data/home";
+---
+
+<section class="section cards-section" id="projects">
+  <div class="section-heading">
+    <p class="section-label">Projects</p>
+    <h2>Featured work as architecture case studies.</h2>
+  </div>
+  <div class="case-grid">
+    {projects.map((project) => (
+      <article class="case-card">
+        <span class="card-tag">{project.type}</span>
+        <h3>{project.title}</h3>
+        <dl class="case-study">
+          <div>
+            <dt>Problem</dt>
+            <dd>{project.problem}</dd>
+          </div>
+          <div>
+            <dt>Architectural solution</dt>
+            <dd>{project.solution}</dd>
+          </div>
+          <div>
+            <dt>Impact</dt>
+            <dd>{project.impact}</dd>
+          </div>
+        </dl>
+        <ul class="chips">
+          {project.technologies.map((item) => <li>{item}</li>)}
+        </ul>
+        {project.href && <a href={project.href} target="_blank" rel="noopener noreferrer">View project</a>}
+      </article>
+    ))}
+  </div>
+</section>

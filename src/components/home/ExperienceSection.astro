@@ -1,0 +1,28 @@
+---
+import { roles } from "../../data/home";
+---
+
+<section class="section" id="experience">
+  <div class="section-heading">
+    <p class="section-label">Experience</p>
+    <h2>Complete professional experience</h2>
+  </div>
+
+  <div class="timeline">
+    {roles.map((role) => (
+      <article class="role">
+        <div class="role-meta">
+          <span>{role.period}</span>
+          <strong>{role.company}</strong>
+        </div>
+        <div>
+          <h3>{role.title}</h3>
+          <p>{role.description}</p>
+          <ul class="chips">
+            {role.tags.map((tag) => <li>{tag}</li>)}
+          </ul>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>

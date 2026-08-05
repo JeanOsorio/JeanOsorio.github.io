@@ -1,0 +1,20 @@
+---
+import { stack } from "../../data/home";
+---
+
+<section class="section stack-section" id="stack" aria-labelledby="stack-title">
+  <div class="section-heading">
+    <p class="section-label">Stack</p>
+    <h2 id="stack-title">AI, Next.js, TypeScript, leadership and Web3 technologies</h2>
+  </div>
+  <div class="stack-grid">
+    {stack.map(([group, ...items]) => (
+      <div>
+        <h3>{group}</h3>
+        <ul>
+          {items.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+    ))}
+  </div>
+</section>

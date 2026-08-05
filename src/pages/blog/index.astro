@@ -1,29 +1,22 @@
 ---
+import SiteHeader from "../../components/common/SiteHeader.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { blogPosts } from "../../data/blog";
+
+const blogNavLinks = [
+  { href: "/#experience", label: "Experience" },
+  { href: "/#ai", label: "AI" },
+  { href: "/#leadership", label: "Leadership" },
+  { href: "/#projects", label: "Projects" },
+  { href: "/#stack", label: "Stack" }
+];
 ---
 
 <BaseLayout
   title="Jean Osorio Blog | AI, Frontend Architecture & Tech Leadership"
   description="Blog by Jean Osorio about AI-assisted delivery, frontend architecture and technical leadership."
 >
-  <header class="site-header">
-    <a class="brand" href="/" aria-label="Home">JO</a>
-    <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-controls="site-nav" aria-expanded="false">
-      <span aria-hidden="true"></span>
-    </button>
-    <nav id="site-nav" class="nav" aria-label="Sections">
-      <a href="/#experience">Experience</a>
-      <a href="/#ai">AI</a>
-      <a href="/#leadership">Leadership</a>
-      <a href="/#projects">Projects</a>
-      <a href="/#stack">Stack</a>
-    </nav>
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
-      <span class="theme-toggle__sun" aria-hidden="true">☀</span>
-      <span class="theme-toggle__moon" aria-hidden="true">☾</span>
-    </button>
-  </header>
+  <SiteHeader links={blogNavLinks} />
 
   <main>
     <section class="section blog-section page-hero">
