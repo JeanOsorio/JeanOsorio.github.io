@@ -1,16 +1,16 @@
 ---
 title: "AI-assisted Tech Lead workflow"
-summary: "A sample post about combining AI tools, frontend architecture and team leadership without losing engineering judgment."
+summary: "How I use AI tools as a Tech Lead without treating the output as finished engineering work."
 pubDate: 2026-08-05
 tags: ["AI", "Tech Lead", "Frontend architecture"]
 ---
 
-AI is useful when it helps a team move from ambiguity to a concrete technical path. In my workflow, tools such as GitHub Copilot CLI, Codex CLI and Google Gravity-style exploration are part of discovery, implementation planning, documentation and review preparation.
+I use AI tools most when I need to reduce the time spent getting oriented. In a real codebase, that usually means reading unfamiliar files, finding related tests, checking how a pattern is already used and drafting a first version of a change.
 
-The value is not replacing engineering judgment. The value is shortening the time between a problem, a few possible solutions and a validated implementation. AI can inspect code, draft options, generate refactors and prepare tests, but the final decision still depends on architecture, product context, maintainability and team ownership.
+That does not make the tool responsible for the decision. If the output changes architecture, state management, validation rules or API contracts, it still needs the same review I would give to any pull request.
 
 ## What changes for a Tech Lead
 
-For a Tech Lead, this changes the pace of collaboration. It becomes easier to create technical proposals, explain trade-offs, prepare migration plans and help engineers understand a codebase faster.
+For a Tech Lead, the biggest change is not that AI writes code. It is that the first draft of a proposal, migration plan or test strategy can appear faster. That gives the team something concrete to disagree with, improve or throw away.
 
-A good AI-assisted workflow still needs clear standards: small changes, explicit assumptions, local validation, review discipline, security awareness and a team culture where generated code is treated as a draft.
+The rules are simple: keep changes small, write down assumptions, run the project locally, check the tests and never merge something just because a tool produced it confidently.

@@ -4,7 +4,7 @@ export const roles = [
     company: "CaixaBank Tech",
     title: "Squad Lead - Banksy onboarding platform",
     description:
-      "Squad Lead for Banksy, the new digital onboarding platform for CaixaBank customers. I lead a small team of three people, combining delivery coordination, technical decision-making and hands-on implementation in a SPA built with internal custom components and a frontend architecture designed for complex banking flows. My work includes a dynamic KYC engine based on the questions required for each customer profile, Formik-based dynamic forms, high-coverage automated testing and a transition toward more agentic software development with skills and agents created by the Banksy team together with CaixaBank Tech's internal AI team.",
+      "Squad Lead for Banksy, the new digital onboarding platform for CaixaBank customers. I lead a team of three people and still stay close to the implementation: SPA work with internal components, dynamic KYC questions by customer profile, Formik-based forms and automated tests for the parts of the flow that cannot afford surprises. We are also testing internal AI skills and agents with CaixaBank Tech's AI team.",
     tags: ["Squad Lead", "Frontend architecture", "SPA", "KYC", "Formik", "Testing", "AI agents", "Banking"]
   },
   {
@@ -12,8 +12,8 @@ export const roles = [
     company: "Clikalia",
     title: "Frontend Tech Lead",
     description:
-      "Designed and developed the new website architecture by modularizing Clikalia business verticals with Turborepo. Each module used Next.js and a custom TypeScript component library created from scratch to keep UI behavior consistent with the design system and adaptable to different countries. Led frontend decisions around testing with Jest, Cypress and Cucumber, internal micro-frontends with module federation, and migrations from JavaScript to TypeScript and from SASS to styled-components. This work combined architecture, mentoring, team coordination and technical standardization.",
-    tags: ["Tech Lead", "Next.js", "TypeScript", "Turborepo", "Module federation", "Design systems", "Jest", "Cypress", "AI-assisted planning"]
+      "Designed and developed Clikalia's new website architecture by splitting business verticals into Turborepo modules. Each module used Next.js and a custom TypeScript component library built from scratch so different countries could share UI behavior without copying work. I also led decisions around Jest, Cypress, Cucumber, internal micro-frontends with module federation, and migrations from JavaScript to TypeScript and from SASS to styled-components.",
+    tags: ["Tech Lead", "Next.js", "TypeScript", "Turborepo", "Module federation", "Design systems", "Jest", "Cypress", "AI tooling"]
   },
   {
     period: "May 2021 - Sep 2024",
@@ -28,7 +28,7 @@ export const roles = [
     company: "Mímate Mamá",
     title: "Co-Founder",
     description:
-      "Co-founded a digital product initiative in Barcelona, combining product thinking, technical decision-making and hands-on execution. Applied startup leadership, prioritization, product discovery and iterative delivery practices.",
+      "Co-founded a digital product initiative in Barcelona. I worked on product decisions, prioritization and hands-on execution while the idea was still changing week by week.",
     tags: ["Co-founder", "Startup leadership", "Product strategy", "Delivery"]
   },
   {
@@ -36,7 +36,7 @@ export const roles = [
     company: "SingularCover",
     title: "Frontend Tech Lead",
     description:
-      "Worked as Frontend Team Lead, breaking a frontend monolith into a more maintainable architecture. Created a custom component library and an architecture and communication layer that allowed React to focus on UI while communicating with services such as Contentful and Phrase. Led decisions around React Context, shared UI contracts and team standards.",
+      "Worked as Frontend Team Lead, breaking a frontend monolith into smaller parts. Created a custom component library and a communication layer so React screens could stay focused on UI while talking to services such as Contentful and Phrase. Led decisions around React Context, shared UI contracts and team standards.",
     tags: ["Tech Lead", "React", "Component library", "Architecture", "Contentful", "Phrase", "Team standards"]
   },
   {
@@ -52,7 +52,7 @@ export const roles = [
     company: "atmira",
     title: "Frontend Architect",
     description:
-      "Helped develop new frontend architecture for CaixaBank and BPI Bank. Focused on architectural foundations, reusable frontend patterns, migration paths and technical guidance for teams working on banking products.",
+      "Helped develop new frontend architecture for CaixaBank and BPI Bank. Focused on reusable frontend patterns, migration paths and technical guidance for teams working on banking products.",
     tags: ["Frontend Architect", "CaixaBank", "BPI Bank", "Architecture", "Reusable patterns"]
   },
   {
@@ -60,7 +60,7 @@ export const roles = [
     company: "Local Productos App",
     title: "Co-Founder",
     description:
-      "Co-founded a local product discovery mobile initiative in Barcelona. Worked on product direction, app concept, delivery planning and technical execution for a React Native-style product experience.",
+      "Co-founded a local product discovery mobile initiative in Barcelona. Worked on the app concept, product direction and early technical execution for a React Native-style experience.",
     tags: ["Co-founder", "Mobile app", "Product", "React Native", "Startup"]
   },
   {
@@ -84,7 +84,7 @@ export const roles = [
     company: "Blabloo, languages & friends",
     title: "Software Developer",
     description:
-      "Worked as PHP and Ruby on Rails developer on an online language-learning product, using Linux, Redis, MongoDB and jQuery. Contributed to product features, backend integration and frontend interactions.",
+      "Worked as PHP and Ruby on Rails developer on an online language-learning product, using Linux, Redis, MongoDB and jQuery.",
     tags: ["Ruby on Rails", "PHP", "Linux", "Redis", "MongoDB", "jQuery"]
   },
   {
@@ -92,7 +92,7 @@ export const roles = [
     company: "HexaSystems Inc",
     title: "Development Specialist",
     description:
-      "Worked across iOS development, Microsoft Dexterity specialization and support for open-source platforms such as Joomla and WordPress. Combined enterprise software knowledge with web platform delivery.",
+      "Worked across iOS development, Microsoft Dexterity and support for open-source platforms such as Joomla and WordPress.",
     tags: ["iOS", "MS Dexterity", "Joomla", "WordPress", "Enterprise software"]
   },
   {
@@ -126,55 +126,55 @@ export const projects = [
     type: "Banking onboarding",
     title: "CaixaBank Tech - Banksy",
     problem:
-      "New customers need a guided onboarding flow that adapts to different profiles, regulatory questions and banking-specific validation needs without becoming hard to maintain.",
+      "New customers need an onboarding flow that changes depending on their profile, regulatory questions and banking validation rules.",
     solution:
-      "Led a three-person squad building a SPA on top of internal custom components, with a dynamic KYC layer, Formik-powered form generation and a frontend architecture prepared for complex onboarding flows.",
+      "Led a three-person squad building a SPA with internal components, a dynamic KYC layer and Formik-powered form generation.",
     impact:
-      "Improved maintainability, test confidence and delivery clarity while helping the team move toward agentic engineering practices with internal AI skills and agents.",
-    technologies: ["SPA", "Custom components", "Formik", "Dynamic KYC", "Automated testing", "AI-assisted workflows"]
+      "Made the flow easier to test and change while the team started trying internal AI skills and agents for daily engineering work.",
+    technologies: ["SPA", "Custom components", "Formik", "Dynamic KYC", "Automated testing", "AI tooling"]
   },
   {
     type: "Proptech platform",
     title: "Clikalia frontend architecture",
     problem:
-      "Multiple business verticals needed to evolve without duplicating frontend foundations or fragmenting the product experience across countries.",
+      "Multiple business verticals needed to evolve without each country rebuilding the same frontend foundations.",
     solution:
       "Designed a modular architecture with Turborepo, Next.js and a custom TypeScript component library aligned with the design system.",
     impact:
-      "Created stronger frontend standards for teams, improved reuse and supported migrations from JavaScript to TypeScript and from SASS to styled-components.",
+      "Gave teams shared frontend standards and supported migrations from JavaScript to TypeScript and from SASS to styled-components.",
     technologies: ["Next.js", "TypeScript", "Turborepo", "Design system", "Module federation", "Jest", "Cypress"]
   },
   {
     type: "Banking architecture",
     title: "CaixaBank Silk architecture",
     problem:
-      "Large banking applications needed a migration path toward reusable frontend foundations without forcing every team into a single monolith.",
+      "Large banking applications needed a migration path that did not force every team back into one frontend monolith.",
     solution:
       "Worked on a micro-frontend architecture based on Stencil web components, including core modules for communication, authentication and internationalization.",
     impact:
-      "Helped define reusable patterns that enabled teams to migrate applications incrementally while preserving consistency across banking products.",
+      "Helped define patterns that teams could adopt incrementally across banking products.",
     technologies: ["Micro-frontends", "Stencil.js", "Web Components", "Architecture", "i18n", "Authentication"]
   },
   {
-    type: "AI product delivery",
+    type: "AI-assisted product work",
     title: "Centro Alba appointment platform",
     problem:
-      "A psychology center needs appointment and public web workflows that are clear for patients and efficient for internal management.",
+      "A psychology center needed public pages and appointment workflows that patients could understand without internal explanations.",
     solution:
-      "Built product increments with AI-assisted workflows using Copilot CLI, Codex CLI and Google Gravity-style exploration to move faster from planning to implementation.",
+      "Used Copilot CLI, Codex CLI and Google Gravity-style exploration while building appointment and public web flows.",
     impact:
-      "Reduced iteration time and improved clarity around user flows, interface states and implementation tasks.",
-    technologies: ["AI-assisted delivery", "Product UX", "Frontend implementation", "Copilot CLI", "Codex CLI"]
+      "Moved faster through early options and kept implementation tasks small enough to review.",
+    technologies: ["AI tooling", "Product UX", "Frontend implementation", "Copilot CLI", "Codex CLI"]
   },
   {
     type: "SEO healthcare website",
     title: "Centro Alba public website",
     problem:
-      "The center needed a public website capable of communicating services clearly, ranking for relevant psychology searches and converting visitors into appointment requests without relying on a heavy application stack.",
+      "The center needed a public website that explained services clearly, ranked for psychology searches and sent visitors toward appointment requests without a heavy app stack.",
     solution:
-      "Worked on an SEO-first web architecture with clear information hierarchy, structured landing pages, semantic HTML, optimized metadata, Open Graph tags, sitemap and performance-conscious frontend implementation.",
+      "Worked on structured landing pages, semantic HTML, metadata, Open Graph tags, sitemap and a fast frontend implementation.",
     impact:
-      "Improved the site's ability to be indexed, shared and understood by users and search engines while keeping the experience fast, accessible and aligned with the center's professional positioning.",
+      "Made the site easier to index, share and understand while keeping the experience fast and accessible.",
     technologies: ["SEO", "Semantic HTML", "Metadata", "Open Graph", "Sitemap", "Performance", "Accessibility"],
     href: "https://centroalba.es"
   },
@@ -182,11 +182,11 @@ export const projects = [
     type: "AI blog automation",
     title: "Centro Alba AI blog automation pipeline",
     problem:
-      "Centro Alba needed a repeatable way to publish search-friendly psychology content without manually coordinating research, writing, SEO validation and publishing preparation for every article.",
+      "Centro Alba needed a repeatable way to prepare psychology articles without coordinating research, writing, SEO checks and publishing notes by hand every time.",
     solution:
-      "Designed an n8n-based automation pipeline with specialized AI agents for each stage of the editorial workflow: a research agent for search intent, topics and FAQs; a writing agent for structured article drafts; and an SEO audit agent for metadata, heading hierarchy, internal linking, readability and publishing readiness.",
+      "Designed an n8n pipeline with separate AI agents for research, article drafts and SEO checks.",
     impact:
-      "Turned blog production into a scalable and auditable process, reducing manual coordination while keeping human review in the loop for tone, clinical sensitivity and final approval.",
+      "Reduced manual coordination while keeping human review for tone, clinical sensitivity and final approval.",
     technologies: ["n8n", "AI agents", "Research agent", "Writing agent", "SEO audit agent", "Structured prompts", "Editorial automation", "Human-in-the-loop"],
     href: "https://centroalba.es"
   },
@@ -198,7 +198,7 @@ export const projects = [
     solution:
       "Owned the technical stack: Solidity contracts, ERC721/ERC1155 integration, React/Web3.js minting flows, Node.js thumbnails and SVG color manipulation based on token data.",
     impact:
-      "Shipped the product foundation for minting, token visualization and rarity exploration.",
+      "Shipped the foundation for minting, token visualization and rarity exploration.",
     technologies: ["Solidity", "Ethereum", "ERC721", "ERC1155", "React", "Web3.js", "Node.js", "SVG"],
     href: "https://gradis.art"
   }
@@ -208,8 +208,8 @@ export const stack = [
   ["Core & languages", "TypeScript", "JavaScript ES6+", "HTML5", "CSS3", "Node.js"],
   ["Frameworks & UI", "React", "Next.js", "Angular", "Tailwind CSS", "Styled-components", "Material UI", "Formik"],
   ["Frontend architecture", "Micro-frontends", "Module federation", "Turborepo", "Design systems", "Stencil web components", "Custom component libraries", "Migration strategy"],
-  ["Testing & quality", "Jest", "Cypress", "Cucumber", "React Testing Library", "E2E testing", "Unit testing", "High-coverage delivery", "Code review"],
-  ["AI-assisted engineering", "GitHub Copilot CLI", "Codex CLI", "Google Gravity", "Agentic workflows", "Team skills", "AI-assisted refactoring", "Prompt engineering", "Review preparation"],
+  ["Testing & quality", "Jest", "Cypress", "Cucumber", "React Testing Library", "E2E testing", "Unit testing", "Test coverage", "Code review"],
+  ["AI tooling", "GitHub Copilot CLI", "Codex CLI", "Google Gravity", "Internal agents", "Team skills", "Refactoring support", "Prompt writing", "Review preparation"],
   ["Leadership", "Tech Lead", "Squad Lead", "Frontend Architect", "Team mentoring", "Architecture reviews", "Delivery planning", "Technical strategy", "Stakeholder alignment"],
   ["Backend & tooling", "Ruby on Rails", "PHP", "MySQL", "MongoDB", "Redis", "Shell", "CI/CD", "API integrations"],
   ["Web3", "Solidity", "Web3.js", "Ethereum Network", "ERC721", "ERC1155", "Hardhat", "Truffle Framework", "Smart contracts"]
@@ -219,36 +219,36 @@ export const aiHighlights = [
   {
     title: "Centro Alba appointment management",
     description:
-      "AI-supported product work for appointment flows, internal management screens and public web presence. The focus is practical: clarify the domain, generate implementation paths, review edge cases and ship usable increments."
+      "I used AI tools while working through appointment flows, internal management screens and public pages. Mostly this meant exploring options, checking edge cases and turning rough notes into smaller implementation tasks."
   },
   {
     title: "CLI-first AI workflows",
     description:
-      "Daily use of tools such as GitHub Copilot CLI and Codex CLI to accelerate repository exploration, code generation, refactors, debugging, documentation and repeatable engineering tasks."
+      "I use GitHub Copilot CLI and Codex CLI for repository exploration, small refactors, debugging, documentation drafts and review preparation."
   },
   {
     title: "Google Gravity experimentation",
     description:
-      "Use of Google Gravity-style AI workflows for ideation, interface exploration and fast validation of product direction before committing engineering time."
+      "I use Google Gravity-style workflows to try interface ideas and product directions before spending too much time on implementation."
   },
   {
-    title: "AI with engineering discipline",
+    title: "AI is not the reviewer",
     description:
-      "AI output is treated as a draft, not as authority: every change still goes through architecture judgment, local validation, code review, maintainability checks and product fit."
+      "Generated output is a draft. I still check the architecture, run the project locally, review the code and decide whether the change fits the product."
   }
 ];
 
 export const leadershipItems = [
   "Leading frontend architecture decisions across product teams from atmira onward.",
-  "Mentoring engineers through pairing, review feedback, technical proposals and practical ownership.",
-  "Creating shared frontend standards so teams can move independently without fragmenting the product.",
-  "Designing component libraries, design-system foundations and UI contracts that reduce repeated work.",
-  "Coordinating remote and cross-functional teams with clear communication, delivery rituals and explicit decision records.",
-  "Protecting team focus by turning vague product needs into scoped, testable and shippable technical slices.",
-  "Balancing business deadlines with long-term maintainability: migration paths, technical debt triage and incremental modernization.",
-  "Driving architecture reviews around Next.js, React, TypeScript, micro-frontends, module federation, Turborepo and design-system strategy.",
-  "Helping teams adopt AI-assisted delivery while preserving code quality, accountability and security judgment.",
-  "Translating technical risk for product, design and business stakeholders so decisions are visible and reversible."
+  "Mentoring engineers through pairing, review feedback and technical proposals.",
+  "Creating shared frontend standards so teams do not solve the same problem five different ways.",
+  "Designing component libraries and UI contracts that reduce repeated work.",
+  "Coordinating remote and cross-functional teams with clear rituals and written decisions.",
+  "Turning early product ideas into scoped, testable slices of work.",
+  "Balancing deadlines with migration paths, technical debt triage and incremental modernization.",
+  "Reviewing Next.js, React, TypeScript, micro-frontends, module federation, Turborepo and design-system decisions.",
+  "Helping teams use AI tools without skipping code review, security checks or local validation.",
+  "Explaining technical risk to product, design and business stakeholders before decisions become expensive."
 ];
 
 export const education = [
